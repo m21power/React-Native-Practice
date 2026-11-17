@@ -1,0 +1,157 @@
+import { StyleSheet } from "react-native";
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#090B2D",
+  },
+  background: {
+    flex: 1,
+    paddingHorizontal: 25,
+    paddingTop: 35,
+    paddingBottom: 25,
+    justifyContent: "space-between",
+  },
+  header: {
+    alignItems: "center",
+    gap: 12,
+  },
+  logo: {
+    width: 65,
+    height: 65,
+    borderRadius: 22,
+    backgroundColor: "#642DF0",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 8,
+  },
+  logoText: {
+    color: "#FFFFFF",
+    fontSize: 42,
+    fontWeight: "bold",
+  },
+  title: {
+    fontSize: 34,
+    fontWeight: "800",
+    color: "#FFFFFF",
+    letterSpacing: -1,
+  },
+  titleAccent: {
+    color: "#9565FF",
+  },
+  subtitle: {
+    fontSize: 14,
+    color: "#A9A9CC",
+    textAlign: "center",
+  },
+  counterCard: {
+    height: 230,
+    borderRadius: 30,
+    borderWidth: 1.5,
+    borderColor: "#713BFA",
+    backgroundColor: "#11113D",
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "#713BFA",
+    shadowOpacity: 0.3,
+    shadowRadius: 25,
+    elevation: 12,
+  },
+  counterValue: {
+    color: "#FFFFFF",
+    fontSize: 100,
+    fontWeight: "800",
+  },
+  counterLabel: {
+    color: "#8989B7",
+    fontSize: 11,
+    fontWeight: "700",
+    letterSpacing: 3,
+  },
+  actions: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  actionItem: {
+    alignItems: "center",
+    gap: 15,
+  },
+  button: {
+    width: 125,
+    height: 125,
+    borderRadius: 38,
+    overflow: "hidden",
+    elevation: 10,
+  },
+  buttonGradient: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  increaseButton: {
+    shadowColor: "#713BFA",
+    shadowOpacity: 0.5,
+    shadowRadius: 15,
+  },
+  decreaseButton: {
+    shadowColor: "#FF365F",
+    shadowOpacity: 0.4,
+    shadowRadius: 15,
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 65,
+    fontWeight: "300",
+    lineHeight: 75,
+  },
+  pressed: {
+    transform: [{ scale: 0.92 }],
+    opacity: 0.85,
+  },
+  actionLabel: {
+    color: "#FFFFFF",
+    fontSize: 17,
+    fontWeight: "700",
+  },
+  resetButton: {
+    alignSelf: "center",
+    borderWidth: 1,
+    borderColor: "#393477",
+    backgroundColor: "#191747",
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 30,
+  },
+  resetText: {
+    color: "#C5B5FF",
+    fontSize: 15,
+    fontWeight: "600",
+  },
+  footer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 12,
+    paddingVertical: 18,
+    borderRadius: 30,
+    backgroundColor: "#211C59",
+  },
+  footerIcon: {
+    color: "#FFC94A",
+    fontSize: 24,
+  },
+  footerText: {
+    color: "#C5B5FF",
+    fontSize: 17,
+    fontWeight: "600",
+    fontStyle: "italic",
+  },
+  errorText: {
+    color: "#FF6485",
+    fontSize: 12,
+    marginTop: 8,
+  },
+  disabled: {
+    opacity: 0.5,
+  },
+});
