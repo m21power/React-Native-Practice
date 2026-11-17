@@ -1,4 +1,4 @@
-import { c } from "@/app/index.styles";
+import { c } from "@/styles/styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   ActivityIndicator,

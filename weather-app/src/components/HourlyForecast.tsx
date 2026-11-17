@@ -1,4 +1,4 @@
-import { styles } from "@/app/index.styles";
+import { styles } from "@/styles/styles";
 import { HourlyWeather, IconName } from "@/types/weatherType";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { ScrollView, Text, View } from "react-native";

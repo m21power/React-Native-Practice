@@ -1,16 +1,10 @@
-import { c, styles } from "@/app/index.styles";
+import { c, styles } from "@/styles/styles";
+import { WeatherData } from "@/types/weatherType";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { Text, View } from "react-native";
-import { WeatherData } from "@/types/weatherType";
 
-function ProgressBar({
-  percent,
-  color,
-}: {
-  percent: number;
-  color: string;
-}) {
+function ProgressBar({ percent, color }: { percent: number; color: string }) {
   return (
     <View style={styles.track}>
       <View

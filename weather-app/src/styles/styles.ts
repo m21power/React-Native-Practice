@@ -1,7 +1,4 @@
 import { StyleSheet } from "react-native";
-/* ---------------- Styles ---------------- */
-/* ---------------- Colors ---------------- */
-
 export const c = {
   surface: "#0b1229",
   surfaceLowest: "#060d24",

@@ -1,6 +1,9 @@
 import CitySearch from "@/components/CitySearch";
 import HourlyForecast from "@/components/HourlyForecast";
 import WeatherGrid from "@/components/WeatherGrid";
+import { fetchWeather } from "@/redux/features/weather/weatherSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { c, styles } from "@/styles/styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
@@ -12,23 +15,35 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useWeather } from "../hooks/weatherHooks";
-import { c, styles } from "./index.styles";
 type IconName = React.ComponentProps<typeof MaterialCommunityIcons>["name"];
 
 /* ---------------- Screen ---------------- */
 
 export default function HomeScreen() {
-  const {
-    weatherData,
-    city,
-    searchCity,
-    setSearchCity,
-    loading,
-    error,
-    fetchWeather,
-  } = useWeather();
-  /* ---------------- Loading State ---------------- */
+  const dispatch = useAppDispatch();
+
+  // Read data from Redux
+  const { weatherData, loading, error } = useAppSelector(
+    (state) => state.weather,
+  );
+
+  // Search input is local UI state
+  const [searchCity, setSearchCity] = React.useState("London");
+
+  // Fetch initial weather
+  React.useEffect(() => {
+    dispatch(fetchWeather("London"));
+  }, [dispatch]);
+
+  // Search handler
+  const handleSearch = (cityName: string) => {
+    dispatch(fetchWeather(cityName));
+  };
+
+  const weather = weatherData?.weather;
+  const hourly = weatherData?.hourly ?? [];
+
+  // Keep the rest of your existing UI below...
 
   if (loading && !weatherData) {
     return (
@@ -50,8 +65,6 @@ export default function HomeScreen() {
       </LinearGradient>
     );
   }
-  const weather = weatherData?.weather;
-  const hourly = weatherData?.hourly ?? [];
 
   return (
     <LinearGradient colors={[c.surface, c.surfaceLowest]} style={styles.flex}>
@@ -67,9 +80,9 @@ export default function HomeScreen() {
           <CitySearch
             searchCity={searchCity}
             setSearchCity={setSearchCity}
-            fetchWeather={fetchWeather}
+            fetchWeather={handleSearch}
             loading={loading}
-            error={error}
+            error={error ?? ""}
             weatherData={weatherData}
           />
 
